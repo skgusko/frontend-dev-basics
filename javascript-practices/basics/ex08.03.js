@@ -16,14 +16,24 @@ Array.prototype.insert = function(index, value) {
 
         // 오류!!
         // 콜백 함수에서의 this는 어휘상의 this와 일치하지 않는다.
-        value.forEach(function(e) {
+        // value.forEach(function(e) {
+        //     this.splice(index++, 0, e);
+        // });
+
+        // 해결방법1:
+        // var _this = this; //외부에서 세팅 (여기서 this는 a)
+        // value.forEach(function(e) {
+        //     _this.splice(index++, 0, e);
+        // });
+
+        // 해결방법2:
+        value.forEach(function(e) { //f가 호출될 때 this는 얘야 (여기서 this는 a)
             this.splice(index++, 0, e);
-        });
+        }.bind(this)); //bind : 함수 호출 때 this를 세팅해줌
 
     } else {
         this.splice(index, 0, value);
     }
-
 }
 
 
