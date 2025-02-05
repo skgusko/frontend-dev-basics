@@ -24,17 +24,15 @@ console.log(url2);
 var url3 = encodeURI(url);
 console.log(url3);
 
-// 3-1. encodeURIComponent: 값만 encoding해야 하는 경우 사용(o), url 전체를 encoding 해야 하는 경우 사용(x)
-
-// 오용예
-var url4 = encodeURIComponent(url); 
+// 3-1. encodeURIComponent: 값만 encoding해야 하는 경우 사용(o), url 전체를 encoding 해야 하는 경우 사용(x) 
+// 오용 예
+var url4 = encodeURIComponent(url);
 console.log(url4);
 
 // 3-2. encodeURIComponent
 // 사용 예
 // 만들어야 할 URL: http://www.mysite.com/user?name=둘리&email=dooly@gmail.com
 var url = "http://www.mysite.com/user";
-
 var formData = {
     name: "둘리",
     email: "dooly@gmail.com"
@@ -50,3 +48,4 @@ var toQueryString = function(o) {
 }
 
 console.log(url + "?" + toQueryString(formData));
+
