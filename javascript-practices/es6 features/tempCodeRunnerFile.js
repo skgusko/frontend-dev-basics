@@ -1,4 +1,3 @@
-/*
     Default Parameter
  
 */
@@ -7,4 +6,3 @@ const print = function(strs, end='\n') {
 };
 
 print(['Hello', 'World', '!'], ' ');
-
